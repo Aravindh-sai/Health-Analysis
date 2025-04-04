@@ -90,7 +90,7 @@ export default function HealthForm() {
           </div>
 
           <div className="form-group">
-            <label>Medications</label>
+            <label>Medical history</label>
             <div className="option-group">
               {["None", "Diabetes", "Hypertension", "Heart Disease"].map((med) => (
                 <label key={med} className="option">
