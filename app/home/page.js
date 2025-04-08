@@ -24,7 +24,7 @@ export default function ChatInterface() {
 
       // Get the AI's response (drug info)
       const aiResponse = { 
-        text: response.data.response.replace(/\n/g, '<br />'), // Replace `\n` with `<br />`
+        text: response.data.response, // No need for regex anymore
         sender: 'ai' 
       };
       
@@ -54,7 +54,7 @@ export default function ChatInterface() {
           <div
             key={index}
             className={`${styles.message} ${msg.sender === 'user' ? styles.userMessage : styles.aiMessage}`}
-            dangerouslySetInnerHTML={{ __html: msg.text }} // Render HTML (line breaks)
+            dangerouslySetInnerHTML={{ __html: msg.text }} // Render HTML (line breaks, headings)
           />
         ))}
         {loading && <div className={styles.typing}>AI is typing...</div>}
